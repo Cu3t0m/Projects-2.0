@@ -1,0 +1,40 @@
+#+TITLE: Readme
+
+* Introduction
+Welcome to this directory, which hosts my attempt at writing a website in Org Mode, including stylesheets and JavaScript/TypeScript programming
+
+
+** Header
+#+begin_src html :tangle index.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kishore's page</title>
+    <script src="scripts/"></script>
+    <link rel="stylesheets" href="stylesheets/">
+  </head>
+#+end_src
+
+** Body
+#+begin_src html :tangle index.html
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph</p>
+  </body>
+</html>
+#+end_src
+
+** Scripts
+Any and all JavaScript/TypeScript code blocks will go here
+#+begin_src javascript :tangle scripts/scripts.js
+// JavaScript, welcome to the future
+console.log("Hello World!")
+#+end_src
+
+** Stylesheets
+#+begin_src css :tangle stylesheets/style.css
+.bg {
+    background-color: blue,
+    /* background */
+}
+#+end_src

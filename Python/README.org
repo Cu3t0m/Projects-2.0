@@ -1,0 +1,120 @@
+#+title: Readme
+#+property: header-args :tangle beginnings.py
+
+* Python Docs, except its readable :toc:
+  - [[#the-basics][The Basics]]
+  - [[#ifelse][If/Else]]
+  - [[#extra-run-length-encoding][Extra: Run length encoding]]
+
+** The Basics
+
+#+begin_src python
+
+# This is a comment
+"""
+This is a multiline comment, often used for documentation
+"""
+
+# Printing basic strings
+print("Hello World!") # This is an in-line comment
+print("""Wow!
+This string is
+on multiple
+lines!""")
+
+# Variables
+var = "foo"
+var_2 = 1
+var_3 = 0.5
+var_4 = True
+
+print("You are number ",var_2)
+print("You are number {}".format(var_2))
+
+"""Mathematical operators:
+ + = addition
+ - = subtraction
+ ,* = multiplication
+ / = division
+ ,** = multiply to power
+ // = division, formatting answer as an integer"""
+
+#+end_src
+
+** If/Else
+
+#+begin_src python
+var = lambda
+
+if var == lambda:
+    print("the variable is lambda")
+
+elif var != lambda:
+    print("the variable is not lambda")
+
+else:
+    print("Invalid")
+#+end_src
+
+#+RESULTS:
+
+** Extra: Run length encoding
+
+*** Example code, from [[https://stackabuse.com/run-length-encoding/][Stack Abuse]]
+**** Encoding
+#+begin_src python :tangle rle_encode-decode.py
+# rle-encode.py
+
+def rle_encode(data):
+    encoding = ''
+    prev_char = ''
+    count = 1
+
+    if not data: return ''
+
+    for char in data:
+        # If the prev and current characters
+        # don't match...
+        if char != prev_char:
+            # ...then add the count and character
+            # to our encoding
+            if prev_char:
+                encoding += str(count) + prev_char
+            count = 1
+            prev_char = char
+        else:
+            # Or increment our counter
+            # if the characters do match
+            count += 1
+    else:
+        # Finish off the encoding
+        encoding += str(count) + prev_char
+        return encoding
+
+encoded_val = rle_encode('AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE')
+print(encoded_val)
+#+end_src
+
+**** Decoding
+#+begin_src python :tangle rle_encode-decode.py
+# rle-decode.py
+
+def rle_decode(data):
+    decode = ''
+    count = ''
+    for char in data:
+        # If the character is numerical...
+        if char.isdigit():
+            # ...append it to our count
+            count += char
+        else:
+            # Otherwise we've seen a non-numerical
+            # character and need to expand it for
+            # the decoding
+            decode += char * int(count)
+            count = ''
+    return decode
+
+decoded_val = rle_decode('6A1F2D7C1A17E')
+print(decoded_val)
+#+end_src

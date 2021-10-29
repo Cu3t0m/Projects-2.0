@@ -1,0 +1,15 @@
+{
+  "name": "Org-HTML",
+  "version": "1.0.0",
+  "description": "* Introduction Welcome to this directory, which hosts my attempt at writing a website in Org Mode, including stylesheets and JavaScript/TypeScript programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
+}

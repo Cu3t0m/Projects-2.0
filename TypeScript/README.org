@@ -1,0 +1,10 @@
+#+TITLE: Readme
+#+property: header-args :tangle index.ts
+
+* Typescript :toc:
+- [[#hello-world][Hello World!]]
+
+* Hello World!
+#+begin_src typescript
+console.log("Hello World!")
+#+end_src

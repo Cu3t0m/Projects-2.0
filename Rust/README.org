@@ -1,0 +1,61 @@
+#+TITLE: Readme
+#+PROPERTY: header-args
+
+* Rust :toc:
+  - [[#the-basics][The basics]]
+  - [[#variables][Variables]]
+  - [[#integer-range][Integer Range]]
+  - [[#integer-overflow][Integer overflow]]
+  - [[#floats][Floats]]
+
+** The basics
+#+begin_src rust
+// Hello World script
+fn main() {
+    Println!("Hello World!")
+}
+
+#+end_src
+
+** Variables
+#+begin_src rust
+// Variables
+fn main() {
+    let name = "Kishore"; //string
+    /* The default data range for a variable is int32, but could be:
+    u32
+    i32
+    etc */
+    let floating_point = 6.9; //float
+    let var_bool = true; //Boolean
+    let icon = 'Ω'; //Unicode character
+    let mut name = "Kishore" // Mutable variable, allows the value to be changed later on
+
+    Println!("My name is:{}",name); //Formats string to include variable "name"
+    Println!("Rating for that book is:{}",floating_point);
+    Println!("Icon is:{}",icon); //Output will be "Icon is Ω"
+}
+#+end_src
+
+** Integer Range
+A signed variable can store numbers between -(2^(n-1)) to 2^(n-1)-1, with n being the number of bits the data variant uses.
+A) Example: i8 can store numbers from -(2^7) to 2^7-1, with n being replaced by 8
+
+** Integer overflow
+An integer overflow is when a value assigned to a variable exceeds the limit of the defined range of the data type by the Rust lang.
+#+begin_src rust
+fn main() {
+    let age:u8 = 255;
+
+    //The range for "u8" is 0 to 255
+    let weight:u8 = 256;
+    let height:u8 = 257;
+
+    Println!("age is {}",age) // Limit of data range(255)
+    Println!("weight is {}",weight) // Overflow of 1
+    Println!("height is",height) // Overflow of 2
+}
+#+end_src
+
+** Floats
+In Rust, the float data type can be classified as "f32" and "f64"

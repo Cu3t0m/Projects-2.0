@@ -1,0 +1,69 @@
+#+TITLE: README
+
+* Readable Lua tutorial :toc:
+  - [[#different-ways-of-writing-a-lua-script][Different ways of writing a lua script]]
+  - [[#variables-and-code-blocks][Variables and code blocks]]
+  - [[#ifelse][If/else]]
+  - [[#credits][Credits]]
+
+** Different ways of writing a lua script
+
+Method 1: A standard ".lua" file
+To put it simply, all you need to do is create a file with the ".lua", file extension, e.g., rc.lua
+
+Method 2: A script with the shebang "#/path/to/lua"
+
+#+begin_src shell :tangle lua.sh
+
+#!/opt/local/bin/lua
+-- The path to your lua binary will probably be different so make sure to check its location
+print("Hello World!")
+
+#+end_src
+
+** Variables and code blocks
+
+#+begin_src lua :tangle beginnings.lua
+
+var_1 = 'walternate'
+var_2 = "Double quotes also work, just like Python"
+var_3 = [[ To create a multi-line string,
+        start it with double square brackets
+        instead of a single or double quote]]
+
+var_1 = nil -- Removes the definition of "var_1"
+
+num = 0 -- Global variable, the default
+
+while num < 50 do -- Blocks of code are always denoted with a keyword, like "do"
+  num = num + 1
+end
+
+local age = 50 -- local variable
+
+#+end_src
+
+** If/else
+
+#+begin_src lua :tangle beginnings.lua
+
+if num > 40 then -- Keyword here is "then"
+  print('over 40')
+elseif s ~= 'walternate' then -- ~= is "not equals"
+  -- To check equality, use "=="
+  io.write("not over 40 \n")
+else
+  thisIsGlobal = 5
+
+  local line = io.read() -- reads the next input line
+
+  -- String concatenation (formating string to include the value of a variable uses the ".." operator)
+  print("Winter is coming, " .. line)
+end
+
+#+end_src
+
+
+** Credits
+- [[https://ebens.me/post/lua-for-programmers-part-1/][Lua for programmers]]
+- [[https://learnxinyminutes.com/docs/lua/][Learn Lua in 15 minutes]]

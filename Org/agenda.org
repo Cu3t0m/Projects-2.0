@@ -1,0 +1,16 @@
+#+TITLE: Agenda
+#+description: TODO list, nothing to see here
+
+* Todo list:
+** School [0/2]
+*** TODO English Homework - Seneca
+SCHEDULED: <2021-11-07 Sun>
+*** TODO DT - Sort out theory folder, add contents page
+SCHEDULED: <2021-11-05 Fri>
+
+** Programming [0/5]
+*** [ ] Rust
+*** [ ] Haskell
+*** [ ] Go
+*** [ ] Python
+*** [ ] Lua

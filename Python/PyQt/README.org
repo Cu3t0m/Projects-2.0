@@ -1,0 +1,13 @@
+#+title: Readme
+#+description: A GUI, written with the PyQt framework, pretty poggers indeed
+#+property: header-args :tangle py_qt.py
+
+* Python GUI
+
+This GUI application will be written in Python, using the PyQt framework
+
+#+begin_src python
+import qt,sys
+
+
+#+end_src
