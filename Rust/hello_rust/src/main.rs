@@ -13,7 +13,7 @@ fn main() {
     println!("What's yours?");
     let mut uname = String::new();
 
-    io::stdin().read_line(&mut uname).expect("Nice name?");
+    io::stdin().read_line(&mut uname).expect("Nice name!");
 
     println!("Your name is {}", uname);
     println!("That's a great name!")
