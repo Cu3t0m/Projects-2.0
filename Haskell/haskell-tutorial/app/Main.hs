@@ -1,3 +1,4 @@
+-- Haskell tutorial file
 module Main where
 
 import Lib
