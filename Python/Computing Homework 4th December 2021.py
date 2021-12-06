@@ -1,4 +1,4 @@
-# Coding  Task 2/12/2021
+# Coding  Task 2/12/2021 - Basic game
 
 ## Imports
 import random
