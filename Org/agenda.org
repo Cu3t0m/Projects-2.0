@@ -2,11 +2,15 @@
 #+description: TODO list, nothing to see here
 
 * Todo list:
-** School [2/2]
+** School [3/3]
 *** DONE English Homework - Seneca
 SCHEDULED: <2021-11-07 Sun>
 *** DONE DT - Sort out theory folder, add contents page
 SCHEDULED: <2021-11-05 Fri>
+*** English Lit
+SCHEDULED: <2021-12-10 Fri>
+*** DONE Computing
+SCHEDULED: <2021-12-10 Fri>
 
 ** Programming [0/5]
 *** [ ] Rust
