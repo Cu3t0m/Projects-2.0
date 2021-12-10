@@ -1,8 +1,6 @@
 #+TITLE: README
 #+author:    Kishore Sathees
 #+email:     k.sath214@gmail.com
-#+TAGS: Programming, Python, Lua, Rust, Go
-
 
 
 * This repo contains all projects I will be working on, as well as experimenting with coding in org mode
@@ -14,6 +12,7 @@
 * Programming languages
 ** What I'm planning on learning
 *** TODO Go
+
 #+BEGIN_SRC go
 package main
 import "fmt"
@@ -22,24 +21,30 @@ func main() {
     fmt.println("Hello World!")
 }
 #+END_SRC
+
 *** TODO Haskell
     #+begin_src haskell
       putStrLn "Hello World!"
       #+end_src
 
 ** What I'm learning right now
+
 *** DONE Python
+
 #+BEGIN_SRC python
 # Welcome to Python, one of, if not the most, new user friendly programming languages out there!
 print("Hello World!")
 #+END_SRC
 
 *** TODO Lua
+
 #+BEGIN_SRC lua
 -- This isn't Python, this is Lua!
 print("Hello World!")
 #+END_SRC
+
 *** TODO Rust
+
 #+BEGIN_SRC rust
 fn main() {
     println!("Hello World!")
@@ -47,7 +52,7 @@ fn main() {
 #+END_SRC
 
 *** TODO React.js/Vue.js
+
 #+begin_src javascript
-// Welcome to JavaScript, we're in the future now!
 console.log("Hello World!")
 #+end_src
