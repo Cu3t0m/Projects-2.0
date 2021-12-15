@@ -23,9 +23,9 @@ func main() {
 #+END_SRC
 
 *** TODO Haskell
-    #+begin_src haskell
-      putStrLn "Hello World!"
-      #+end_src
+#+begin_src haskell
+putStrLn "Hello World!"
+#+end_src
 
 ** What I'm learning right now
 
