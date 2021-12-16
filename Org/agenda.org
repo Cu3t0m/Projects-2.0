@@ -11,10 +11,9 @@ SCHEDULED: <2021-11-05 Fri>
 SCHEDULED: <2021-12-10 Fri>
 *** DONE Computing
 SCHEDULED: <2021-12-10 Fri>
-
-** Programming [0/5]
-*** TODO Rust
-*** TODO Haskell
-*** TODO Go
-*** [-] Python
-*** TODO Lua
+*** TODO Philosopy and Ethics - Holiday Homework
+SCHEDULED: <2022-01-07 Fri>
+*** TODO History - Holiday Homework
+SCHEDULED: <2022-02-02 Wed>
+*** TODO Spanish Revision
+SCHEDULED: <2022-01-04 Tue>
