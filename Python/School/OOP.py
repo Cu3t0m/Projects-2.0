@@ -4,6 +4,7 @@
 
 # Imports
 import random
+import time
 
 # Defining a class, this will be used later
 class player_Pokemon():
@@ -43,7 +44,6 @@ def RNG(x,y):
 
 
 # Defines the player and enemy's properties, like health, strength, level, etc. and prints out a profile
-
 playerPokemon = player_Pokemon()
 playerPokemon.name = "Pikachu"
 playerPokemon.strength = 9
@@ -59,3 +59,45 @@ enemyPokemon.ehp = 40
 enemyPokemon.emaxHP = 40
 enemyPokemon.elevel = 5
 enemyPokemon.enemy_profile()
+
+BATTLEOVER = False
+
+while BATTLEOVER is False:
+
+    print("Current battle status:")
+    print("You:")
+    print(playerPokemon.character_profile())
+    time.sleep(0.5)
+    print("Your opponent:")
+    print(enemyPokemon.enemy_profile())
+    time.sleep(0.5)
+
+    dmg_mod = RNG(0,10)
+    damage_mod = dmg_mod + playerPokemon.strength
+    enemyPokemon.ehp = enemyPokemon.ehp - damage_mod
+
+    dmg_mod = RNG(0, 10)
+    enemy_damage_mod = dmg_mod + enemyPokemon.estrength
+    playerPokemon.hp = playerPokemon.hp - enemy_damage_mod
+    time.sleep(0.5)
+
+    YOUWON = 0
+    # (Testing) Different message depending on variable "YouWon"
+    if playerPokemon.hp > 0 and enemyPokemon.ehp <= 0:
+        YOUWON = True
+
+    elif playerPokemon.hp <= 0 and enemyPokemon.ehp > 0:
+        YOUWON = False
+
+    # if either fighter's health is lower than 0 then program ends
+    if playerPokemon.hp <= 0 or enemyPokemon.ehp <= 0:
+        print("The battle is over, thanks for playing!")
+        if YOUWON is True:
+            print("You won! Great job!")
+        else:
+            print("You lost...try again next time")
+
+        time.sleep(0.5)
+        BATTLEOVER = True
+
+    # BATTLEOVER = True

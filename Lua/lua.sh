@@ -1,3 +1,4 @@
-#!/opt/local/bin/lua
+#!/usr/bin/env lua
 -- The path to your lua binary will probably be different so make sure to check its location
-print("Hello World!")
+print("Hello World!
+)
