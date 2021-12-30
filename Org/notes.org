@@ -1,3 +1,16 @@
 #+TITLE: Notes
 
-Stuff
+* Physics Holiday Homework - Random notes I'll probably need
+
+** Formula
+#+begin_example
+Kinetic Energy = 1/2 * mass * velocity^2
+
+Potential Energy = mass * height * Gravitational Field Strength
+#+end_example
+
+* ""
+Question 33.6
+Part A: 55000
+Part B: 78500
+Part C:
