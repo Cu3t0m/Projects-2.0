@@ -2,7 +2,10 @@
 module Main where
 
 import Lib
+import Text.Printf (hPrintf, printf)
 
 main :: IO ()
-main = someFunc
-someFunc :: IO ()
+main = printf "%s" "Hello, World!"
+-- someFunc :: IO ()
+-- someFunc = printf "%s" "Hello, World!"
+
