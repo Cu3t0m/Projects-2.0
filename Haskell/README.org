@@ -1,0 +1,187 @@
+#+TITLE: Haskell Tutorial
+#+AUTHOR: Kishore S
+
+* Primitive Data Types
+
+** Numbers
+#+BEGIN_SRC haskell
+3 -- 3
+1 + 1 -- 2
+8 - 1 -- 7
+10 * 2 -- 20
+35 / 5 -- 7
+#+END_SRC
+
+Division isn't integer division by default
+
+#+BEGIN_SRC haskell
+35 / 4 -- 8.75
+35 `div` 4 -- 8 
+#+END_SRC
+
+** Boolean
+
+#+BEGIN_SRC haskell
+-- Booleans are primitives
+True
+False
+#+END_SRC
+
+#+BEGIN_SRC haskell
+not True -- False
+not False -- True
+True && False -- False
+True || False -- True
+1 == 1 -- True
+1 /= 1 -- False
+1 < 10 -- True
+#+END_SRC
+
+Not is a function that takes a single value. Haskell doesn't need parentheses for 
+function calls...all arguments are just listed after the function. So the general pattern
+is...
+func arg1 arg2 arg3...
+
+** Strings and characters
+
+#+BEGIN_SRC haskell
+"This is a string"
+'a'
+'Single quotes can't be used for strings' -- error
+#+END_SRC
+
+*** Concatenation
+
+#+BEGIN_SRC haskell
+"Hello " ++ "world!" -- Hello World!
+
+-- Strings are lists of characters
+['H', 'e', 'l', 'l', 'o'] -- Hello
+
+-- Lists can be indexed with the "!!" operator followed by the index
+"This is a string!" !! 0 -- T 
+#+END_SRC
+
+* Lists and Tuples
+
+#+BEGIN_SRC haskell
+-- Every element in a list has to have the same type
+-- The following two lists are the same:
+[1, 2, 3, 4, 5]
+[1..5]
+
+-- Ranges are versatile
+['A'..'F']
+
+-- You can create steps in ranges
+[0,2..10] -- 0 -> 10, in increments of 2
+[5..1] -- [] -> Haskell defaults to incrementing
+[5,4..1] -- 5 -> 1
+
+-- Indexing into a list
+[1..10] !! 3 -- 4 -> zero-based Indexing
+
+-- Infinite lists also exist, because why not
+[1..] -- A list of all natural numbers
+
+[1..] !! 999 -- 1000
+
+-- Joining two lists
+[1..5] ++ [6..10]
+
+-- Adding to head of list
+0:[1..5] -- 0 -> 5
+
+-- List operation
+head [1..5] -- 1
+tail [1..5] -- 2 -> 5
+init [1..5] -- 1 -> 4
+last [1..5] -- 5
+
+-- list comprehensions
+[x*2 | x <- [1..5]] -- [2, 4, 6, 8, 10]
+
+-- w/ conditional
+[x*2 | x <- [1..5], x*2 > 4] -- [6, 8, 10]
+
+-- Every element in a tuple can be different types, but tuples have a fixed length
+-- Example of a tuple:
+("haskell", 1)
+
+-- Accessing elements of a pair (a tuple of length 2)
+fst ("haskell", 1) -- "haskell"
+snd ("haskell", 1) -- 1
+
+-- Pair element accessing doesn't work on n-tuples (triples, quadruples, etc.)
+snd ("snd", "can't touch this", "da na na na") -- error! See functions
+#+END_SRC
+
+* Functions
+
+#+BEGIN_SRC haskell :tangle tutorial.hs
+-- Simple function that takes two variables and adds them
+add a b = a + b
+
+-- If using ghci, you need to use let, "let add a b = a + b"
+
+-- Using function
+add 1 2 -- 3
+
+-- You can also put the function between the two args with backticks:
+1 `add` 2 -- 3
+
+-- You can also define functions with no letters, allowing you to define your own
+-- operators.
+(//) a b = a `div` b
+35 // 4 -- 8
+
+fib x
+  | x < 2 = 1
+  | otherwise = fib (x - 1) + fib (x - 2)
+
+fib 1 = 1
+fib 2 = 2
+fib x = fib (x - 1) + fib (x - 2)
+
+-- Pattern matching with tuples
+sndOfTriple (_, y, _) = y -- Use wild card (_) to bypass naming unused value
+
+-- Patten matching on lists. Here `x` is the first element in the list
+-- and `xs` is the rest on the list. We can write our own map function:
+myMap func [] = []
+myMap func (x:xs) = func x:(myMap func xs)
+
+-- Anonymous functions are created with a backslash
+myMap (\x -> x + 2) [1..5] -- [3, 4, 5, 6, 7]
+
+-- Using 'fold' (called `inject` in some languages) with an anonymous function
+-- foldl1 means fold left, and use the first value in the list as the initial
+-- value for the accumulator
+foldl1 (\acc x -> acc + x) [1..5] -- 15
+#+END_SRC
+
+* More functions
+
+Partial application: If you don't pass all the arguments to a function, it gets partially applied. This means that it will return a function that can take the rest of the arguments.
+#+begin_src haskell
+add a b = a + b
+foo = add 10
+foo 5 -- 15
+
+-- The same thing
+foo = (10+)
+foo = 5 -- 15
+#+end_src
+
+_Function composition_
+The operator `.` chains functions together.
+As an example, here foo is a function that takes a value. It adds 10 to it, multiplies the result of that by 4, and then returns the final value
+
+#+begin_src haskell
+foo = (4*) . (10+)
+
+foo 5 -- 60
+#+end_src
+
+_Fixing precedence_
+Haskell has an operator called '$'. This operator applies a function to a given parameter. In contrast to standard function application, the $
