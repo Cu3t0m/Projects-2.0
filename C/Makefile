@@ -1,14 +1,14 @@
 CC=gcc
 CFLAGS=-I.
-
+BIN=bin
 PROG_NAME=PROG1
 
 build: main.o
-	$(CC) -o main main.o
+	$(CC) -o $(BIN)/main main.o
 
-test: main.o
-	@$(CC) -o main main.o
-	@./main
+run: main.o
+	@$(CC) -o $(BIN)/main main.o
+	@$(BIN)/main
 
 compress: 
 	mkdir -p ${PROG_NAME}

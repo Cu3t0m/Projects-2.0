@@ -1,58 +1,48 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <float.h>
 
-int main() {
-    printf("%s\n", "Hello, World!");
+int main(int argc, char** argv) {
+    /* Basic print statements */
+    printf("Hello World! \n");
+
+    /* Type limits */
+    printf("The Type limits are:");
+    printf("CHAR_BIT    :   %d\n", CHAR_BIT);
+    printf("CHAR_MAX    :   %d\n", CHAR_MAX);
+    printf("CHAR_MIN    :   %d\n", CHAR_MIN);
+    printf("INT_MAX     :   %d\n", INT_MAX);
+    printf("INT_MIN     :   %d\n", INT_MIN);
+    printf("LONG_MAX    :   %ld\n", (long) LONG_MAX);
+    printf("LONG_MIN    :   %ld\n", (long) LONG_MIN);
+    printf("SCHAR_MAX   :   %d\n", SCHAR_MAX);
+    printf("SCHAR_MIN   :   %d\n", SCHAR_MIN);
+    printf("SHRT_MAX    :   %d\n", SHRT_MAX);
+    printf("SHRT_MIN    :   %d\n", SHRT_MIN);
+    printf("UCHAR_MAX   :   %d\n", UCHAR_MAX);
+    printf("UINT_MAX    :   %u\n", (unsigned int) UINT_MAX);
+    printf("ULONG_MAX   :   %lu\n", (unsigned long) ULONG_MAX);
+    printf("USHRT_MAX   :   %d\n", (unsigned short) USHRT_MAX);
+
+    printf("Storage size for floats: %d\n", sizeof(float));
+    printf("FLT_MAX     :   %g\n", (float) FLT_MAX);
+    printf("FLT_MIN     :   %g\n", (float) FLT_MIN);
+    printf("-FLT_MAX    :   %g\n", (float) -FLT_MAX);
+    printf("-FLT_MIN    :   %g\n", (float) -FLT_MIN);
+    printf("DBL_MAX     :   %g\n", (double) DBL_MAX);
+    printf("DBL_MIN     :   %g\n", (double) DBL_MIN);
+    printf("-DBL_MAX     :  %g\n", (double) -DBL_MAX);
+    printf("Precision value: %d\n", FLT_DIG );
+
 
     /* Defining variables */
-    int foo;
-    int bar = 1;
 
-    /* Mathematical Operation */
-    int a = 0, b = 1, c = 2, d = 3, e = 4;
-    a = b - c + d * e;
+    char seggs;
+    int age;
+    float joe;
+    double candice;
+    void;
 
-    printf("%d\n", a);
-
-    /* Defining Boolean variables */
-    #define BOOL char
-    #define FALSE 0
-    #define TRUE 1
-
-    /* Define an array of 10 ints */
-    int numbers[10];
-
-    /* Populating the array */
-    numbers[0] = 1;
-    numbers[1] = 2;
-    numbers[2] = 3;
-    numbers[3] = 4;
-    numbers[4] = 5;
-    numbers[5] = 6;
-    numbers[6] = 7;
-    numbers[7] = 8;
-    numbers[8] = 9;
-    numbers[9] = 10;
-
-    printf("The 7th number in the array is %d\n", numbers[6]);
-
-    /* Multidimensional Array */
-
-    // Defining 3D array?
-    int myM3DArray[1][2][3];
-
-    // Defining 2D array
-    char vowels[1][5] = {
-        {'a', 'e', 'i', 'o', 'u'}
-    };
-
-    /* 
-    * 2D arrays follow this structure:
-    * type arrayName[x][y]
-    * However, you don't necessarily need an x co-ord, as shown here:
-    */
-
-   char voWels[][5] = {
-       {'A', 'E', 'I', 'O', 'U'},
-       {'a', 'e', 'i', 'o', 'u'}
-   };
+    return 0;
 }

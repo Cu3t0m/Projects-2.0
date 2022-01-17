@@ -1,3 +1,4 @@
+'''
 # Setting the variable 'flavour', giving it a value of 0 to be used later
 flavour = 0
 # Setting number of each ice cream flavour
@@ -24,3 +25,18 @@ while flavour != "E":
         print(numberOfVanilla, "vanilla ice cream")
         print(numberOfChocolate, "chocolate ice cream")
         print(numberOfStrawberry, "strawberry ice cream")
+'''
+
+birds = ["Robin", "Chaffinch", "Blackbird", "Dove", "Sparrow"]
+count = [1028, 1274, 1003, 1167, 1392]
+
+# birds_str = x for x in birds
+# count_str = x for x in count
+for i in range(len(birds)):
+    for x in birds:
+        birds_str = x
+
+    for x in count:
+        count_str = x
+
+    print(birds_str, "has a count of", count_str)
