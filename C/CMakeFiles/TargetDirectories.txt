@@ -1,0 +1,3 @@
+/Users/kishore/Projects/C/CMakeFiles/Tutorial.dir
+/Users/kishore/Projects/C/CMakeFiles/edit_cache.dir
+/Users/kishore/Projects/C/CMakeFiles/rebuild_cache.dir

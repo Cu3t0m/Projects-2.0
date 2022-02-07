@@ -26,17 +26,37 @@ from sqlite3 import Error
 # create_database(connection, create_db_query)
 
 # Creating a DB
-def db_create(connection, c):
+def db_create(connection, c, db_name):
     connection = sqlite3.connect('db.sqlite')
     c = connection.cursor()
-    c.execute('''CREATE TABLE db_test(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, number REAL)''')
+    c.execute('''CREATE TABLE ''' + db_name + '''(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, number REAL)''')
     connection.commit()
     connection.close()
 
 # Inserting Values
-def insert_value(conn_insert, c_insert):
+def insert_value(conn_insert, c_insert, db_name, name, number):
     conn_insert = sqlite3.connect('db.sqlite')
     c_insert = conn_insert.cursor()
-    c_insert.execute("INSERT INTO db_test VALUES (?, ?)", (name, number))
+    c_insert.execute("INSERT INTO " + db_name + " VALUES (?, ?)", (name, number))
     c_insert.commit()
     c_insert.close()
+
+connection = sqlite3.connect("db.sqlite")
+c = connection.cursor()
+
+print(
+"""
+1. Create DB
+2. Insert Value
+"""
+)
+choice = int(input())
+if choice == 1:
+    database_name = input("Database name: ")
+    db_create(connection, c, database_name)
+
+elif choice == 2:
+    database_name = input("Database name: ")
+    name = input("Name: ")
+    number = int(input("Number: "))
+    insert_value(connection, c, database_name, name, number)
