@@ -1,3 +1,11 @@
-.container {
-    background-color: crimson;
+/* I'm committing to this, probably */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+title {
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    background-color: black;
+    font-family: 'Fira Code', monospace;
 }
