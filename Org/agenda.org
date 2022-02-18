@@ -2,7 +2,4 @@
 #+description: TODO list, nothing to see here
 
 * Todo list:
-*** TODO Philosopy and Ethics - Holiday Homework
-SCHEDULED: <2022-01-07 Fri>
-*** TODO History - Holiday Homework
-SCHEDULED: <2022-02-02 Wed>
+** TODO Philo Revision <16/5/2022>
