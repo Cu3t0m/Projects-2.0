@@ -1,11 +1,108 @@
 /* I'm committing to this, probably */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-title {
-    font-family: 'Fira Code', monospace;
-}
-
 body {
     background-color: black;
     font-family: 'Fira Code', monospace;
 }
+
+/* Basic Selectors */
+
+/* id attribute */
+#id {
+    color: red;
+}
+
+/* Classes */
+.center {
+    position: absolute;
+    text-align: center;
+    color: red;
+}
+
+/* Elements with classes */
+p.center {
+    text-align: center;
+    position: absolute;
+    color: black;
+}
+
+/* Pseudo selectors */
+button:hover {
+    color: blue;
+}
+
+a:link {
+    color: #FF0000;
+}
+
+a:visited {
+    color: #00FF00;
+}
+
+a:active {
+    color: #0000FF;
+}
+
+.abc:hover::selection{
+    color:red
+}
+
+/* Box model */
+div {
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+}
+
+/* Flex box */
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Grid */
+.container-grid {
+    grid-template-columns: 100px 50px 100px;
+    grid-template-rows: 80px auto 80px;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+
+/* 
+The types of positioning in CSS are-
+(1)static: this is the default value.
+(2)sticky: the element is positioned based on the user's scroll position.
+(3)fixed: the element is positioned related to the browser window.
+(4)relative: the element is positioned relative to its normal position.
+(5)absolute: the element is positioned absolutely to its first positioned parent. 
+*/
+
+.class {
+    text-align: center;
+}
+
+/*
+Absolute Lengths:
+cm = centimeters
+mm = millimeters
+in = inches (1in = 96px = 2.54cm)
+px = pixels (1px = 1/96th of 1in)
+pt = points (1pt = 1/72 of 1in)
+pc = picas (1pc = 12 pt)
+
+Relative Lengths:
+em = Relative to the font-size of the element (2em means 2 times the size of the current font)	
+ex = Relative to the x-height of the current font (rarely used)	
+ch = Relative to the width of the "0" (zero)	
+rem	 = Relative to font-size of the root element	
+vw = Relative to 1% of the width of the viewport*	
+vh = Relative to 1% of the height of the viewport*	
+vmin = Relative to 1% of viewport's* smaller dimension	
+vmax = Relative to 1% of viewport's* larger dimension	
+% = Relative to the parent element
+0
+*/
