@@ -1,29 +1,26 @@
-#!/usr/bin/env node
 interface Product {
-    id: number,
-    name: string,
-    price: number,
+  id: number;
+  name: string;
+  price: number;
 }
-  
+
 function getProduct(id: number): Product {
-    return {
-      id: id,
-      name: `Awesome Gadget ${id}`,
-      price: 99.5,
-    }
+  return {
+    id: id,
+    name: `Awesome Gadget ${id}`,
+    price: 99.5,
+  };
 }
-  
-// console.log(`The product ${product.name} costs $${product.price}`);
-  
+
 const product = getProduct(1);
 const showProduct = (name: string, price: number) => {
   console.log(`The product ${name} costs ${price}.`);
-}
-  
-showProduct(product.name, product.price)
-console.log('Hello'.length)
-console.log('Hello'.toLocaleUpperCase())
-  
+};
+
+showProduct(product.name, product.price);
+console.log("Hello".length);
+console.log("Hello".toLocaleUpperCase());
+
 // Types:
 // string
 // number
@@ -31,38 +28,30 @@ console.log('Hello'.toLocaleUpperCase())
 // null
 // undefined
 // symbol
-  
-// const heading = document.querySelector('h1');
-
-// Type annotations
-
-
-// let count: number;
-// count = 'Hello';
 
 let count: number = 1;
 
-let uname: string = 'John';
+let uname: string = "John";
 let age: number = 25;
 let active: boolean = true;
 
-let names: string[] = ['John', 'Jane', 'Doe']
+let names: string[] = ["John", "Jane", "Doe"];
 
 let person: {
-    name: string;
-    age: number
+  name: string;
+  age: number;
 };
 
 person = {
-    name: 'John',
-    age: 25
-}
+  name: "John",
+  age: 25,
+};
 
 let greeting: (name: string) => string;
 
 greeting = function (name: string) {
-    return `Hi ${name}`;
-}
+  return `Hi ${name}`;
+};
 
 // let counter: number = 0;
 
@@ -74,35 +63,29 @@ let items = [1, 2, 3, null];
 
 // let items = [0, 1, null, 'Hi'];
 
-let arr = [new Date(), new RegExp('\d+')];
+let arr = [new Date(), new RegExp("d+")];
 
-// document.addEventListener('click', function(event) {
-//     console.log(event.button);
-// });
-
-// document.addEventListener('scroll', function (event) {
-//     console.log(event.button);
-// })
+document.addEventListener("click", function (event) {
+  console.log(event.button);
+});
 
 let price = 9.95;
 
 let counter: number = 0;
 let x: number = 100,
-    y: number = 200;
+  y: number = 200;
 
 let bin = 0b100;
-let diffBin: number = 0B010;
+let diffBin: number = 0b010;
 
-console.log(bin)
-console.log(diffBin)
+console.log(bin);
+console.log(diffBin);
 
 let octal: number = 0o10;
-let hexadec: number = 0XA;
+let hexadec: number = 0xa;
 
-let chonkInt: bigint = 9007199254740991n;
-
-let fName: string = 'John';
-let jobTitle: string = 'Web Dev';
+let fName: string = "John";
+let jobTitle: string = "Web Dev";
 
 let desc = `This TS string can
 span multiple
@@ -113,22 +96,23 @@ text
 
 let profile: string = `I'm ${fName} and I'm a ${jobTitle}`;
 
-console.log(profile)
+console.log(profile);
 
 let pend: boolean;
 pend = true;
-
-
 pend = false;
-
-
 let employee: object;
 
 employee = {
-    fName: 'John',
-    lName: 'Doe',
-    age: 25,
-    jobTitle: 'Web Developer'
+  fName: "John",
+  lName: "Doe",
+  age: 25,
+  jobTitle: "Web Developer",
 };
 
-console.log(employee)
+console.log(employee);
+
+const double = (x: number) => x * 2;
+console.log(double(2))
+
+console.log('💀 ')
