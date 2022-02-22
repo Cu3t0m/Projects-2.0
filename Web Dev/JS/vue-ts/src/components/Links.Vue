@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div class="navbar">
         <ul class="navbar-list">
@@ -15,6 +11,11 @@
 <style>
 ul {
     list-style-type: none;
-    
+    margin: 5;
+    padding: 5;
+}
+
+li {
+    display: inline
 }
 </style>
