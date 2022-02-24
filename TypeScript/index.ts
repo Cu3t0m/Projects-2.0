@@ -113,6 +113,6 @@ employee = {
 console.log(employee);
 
 const double = (x: number) => x * 2;
-console.log(double(2))
+console.log(double(2));
 
-console.log('💀 ')
+console.log("💀 ");

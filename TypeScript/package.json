@@ -9,5 +9,9 @@
   },
   "keywords": [],
   "author": "Kishore S",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^17.0.21",
+    "i32": "^1.0.4"
+  }
 }
