@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-// import TheWelcome from './components/TheWelcome.vue'
-import Links from './components/Links.vue'
+import TheWelcome from './components/TheWelcome.vue'
+// import Links from './components/Links.vue'
 
 import { ref } from 'vue'
 
@@ -20,7 +20,7 @@ const counter = ref(0);
   </header>
 
   <main>
-    <!-- <TheWelcome /> -->
+    <TheWelcome />
   </main>
 </template>
 
