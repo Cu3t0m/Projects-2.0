@@ -1,19 +1,22 @@
-function binary_search(array, element, start, end) {
-    if (start > end) {
-        return -1;
+var binarySearch = function (nums, key) {
+    var low = 0;
+    var high = nums.length - 1;
+    while (low <= high) {
+        var mid = Math.floor((low + high) / 2);
+        mid;
+        if (nums[mid] === key) {
+            return mid + 1;
+        }
+        if (key > nums[mid]) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
     }
-    var mid = (start + end) % 2;
-    if (element === array[mid]) {
-        return mid;
-    }
-    else if (element < array[mid]) {
-        return binary_search(array, element, start, mid - 1);
-    }
-    else {
-        return binary_search(array, element, mid + 1, end);
-    }
-}
-var element = 26;
-var array_search = [1, 4, 6, 7, 9, 12, 26, 91, 32];
-console.log("Searching for element ".concat(element));
-console.log("Index of ".concat(element, ": ").concat(binary_search(array_search, element, 0, array_search.length)));
+    return -1;
+};
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var sKey = 6;
+console.log("Searching for ".concat(sKey));
+console.log("Index of ".concat(sKey, " : ").concat(binarySearch(array, sKey)));

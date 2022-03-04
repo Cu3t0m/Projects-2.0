@@ -1,33 +1,24 @@
-function binary_search(
-  array: number[],
-  element: number,
-  start: number,
-  end: number
-): number {
-  if (start > end) {
-    return -1;
+const binarySearch = (nums: Array<number>, key: number): number => {
+  let low = 0;
+  let high = nums.length - 1;
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    mid;
+    if (nums[mid] === key) {
+      return mid + 1;
+    }
+
+    if (key > nums[mid]) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
   }
 
-  let mid = (start + end) % 2;
-  if (element === array[mid]) {
-    return mid;
-  } else if (element < array[mid]) {
-    return binary_search(array, element, start, mid - 1);
-  } else {
-    return binary_search(array, element, mid + 1, end);
-  }
-}
+  return -1;
+};
 
-let element = 26;
-
-let array_search = [1, 4, 6, 7, 9, 12, 26, 91, 32];
-
-console.log(`Searching for element ${element}`);
-console.log(
-  `Index of ${element}: ${binary_search(
-    array_search,
-    element,
-    0,
-    array_search.length
-  )}`
-);
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const sKey = 6
+console.log(`Searching for ${sKey}`)
+console.log(`Index of ${sKey} : ${binarySearch(array, sKey)}`)

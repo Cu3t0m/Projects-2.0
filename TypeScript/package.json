@@ -11,5 +11,6 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.21"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
