@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <button type="button" id="btn">Click me to show the date</button>
+    <p id="date"></p>
+
+    <div onmouseover="this.style.backgroundColor='red'">
+      <p>This text should be red</p>
+    </div>
+
+    <button type="button" id="btn2">Click me!</button>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const p = document.getElementById("date");
+
+      btn.onclick = () => {
+        p.innerHTML = Date();
+      };
+
+      const btn2 = document.getElementById("btn2");
+
+      btn2.onclick = () => {
+        alert("Hey!");
+      };
+
+      let txt = "Hey there";
+
+      text = txt.slice(0, 4);
+      console.log(text);
+
+      let date = new Date();
+      date.setFullYear(2021);
+      console.log(date);
+    </script>
+  </body>
+</html>
